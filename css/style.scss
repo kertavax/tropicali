@@ -3,7 +3,7 @@
 
 $primary-color: #f70201;
 $body-font: 'Jost', sans-serif;
-$body-size: 24px;
+$body-size: 18px;
 
 @mixin drop_shadow($color) {
 	box-shadow: 0 0 10px $color;
