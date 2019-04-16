@@ -74,24 +74,28 @@ body {
   line-height: 1.5;
   background-color: #f70201;
   color: #fff;
-}
-@media (max-width: 600px) {
-  body {
-    background-color: yellow;
-  }
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 section {
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 500px;
+}
+@media (max-width: 600px) {
+  section {
+    width: 350px;
+    font-size: 16.000000008px;
+  }
 }
 section svg {
-  fill: #f70201;
+  fill: #fff;
 }
 section p {
   margin: 24px 0 0;
-  color: #f70201;
-  box-shadow: 0 0 10px rgba(145, 35, 253, 0.2);
+  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */

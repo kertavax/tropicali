@@ -5,8 +5,14 @@ $primary-color: #f70201;
 $body-font: 'Jost', sans-serif;
 $body-size: 24px;
 
-@mixin drop_shadow($color) {
-	box-shadow: 0 0 10px $color;
+$mq-large: 800px;
+$mp-medium: 600px;
+
+@mixin vertically-middle() {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 }
 
 @mixin mq($width) {
@@ -22,23 +28,24 @@ body {
 	background-color: $primary-color;
 	color: #fff;
 
-	@include mq(600px) {
-		background-color: yellow;
-	}
+	min-height: 100vh;
+	@include vertically-middle();
 }
 
 section {
-	background-color: #fff;
-	@include drop_shadow(rgba(0, 0, 0, 0.2));
-	h1 {
+	width: 500px;
 
+	@include mq($mp-medium) {
+		width: 350px;
+		font-size: $body-size * 0.666666667;
 	}
+
 	svg {
-		fill: $primary-color;
+		fill: #fff;
 	}
+
 	p {
 		margin: 24px 0 0;
-		color: $primary-color;
-		@include drop_shadow(rgba(145, 35, 253, 0.2));
+		color: #fff;
 	}
 }
