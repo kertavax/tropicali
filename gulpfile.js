@@ -3,6 +3,7 @@ var sass = require("gulp-sass")
 var clean_css = require("gulp-clean-css")
 var sourcemaps = require("gulp-sourcemaps")
 var browser_sync = require("browser-sync").create()
+var gh_pages = require("gh-pages")
 
 sass.compiler = require("node-sass")
 
@@ -45,6 +46,10 @@ gulp.task("watch", function() {
 	gulp.watch("src/*.html", ["html"]).on("change", browser_sync.reload)
 	gulp.watch("src/css/style.scss", ["sass"])
 	gulp.watch("src/fonts/*", ["fonts"])
+})
+
+gulp.task("deploy", function () {
+	return gh_pages.publish("dist")
 })
 
 gulp.task("default", ["html", "sass", "fonts", "images", "watch"])
